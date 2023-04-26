@@ -1,6 +1,8 @@
-from VCG import VCG
 import sys
 import random
+import time
+
+from VCG import VCG
 
 def generate(num_agents, num_items):
     agents = {} # agent : num_items
@@ -16,9 +18,12 @@ def main():
     random.seed(42)
 
     agents = generate(2, 4)
-    print("agents", agents)
+    #print("agents", agents)
     vcg = VCG(agents, 2, 4)
-    vcg._calculate_winner(agents, 2, 4)
+    x, p = vcg.calc_allocations_payments()
+    print(x)
+    print(p)
+    #vcg._calc_winner(agents, 2, 4)
     sys.exit(0)
 
 
@@ -30,12 +35,14 @@ def main():
 
     for i in n:
         for j in m:
-            print(i, j)
+            print("num agents/n: ", i)
+            print("num_items/m:", j)
             agents = generate(i, j)
             print(agents)
-            vcg = VCG(agents, j)
-            if j == 6:
-                break
+
+            
+            vcg = VCG(agents, i, j)
+
         sys.exit(0)
 
 if __name__ == "__main__":

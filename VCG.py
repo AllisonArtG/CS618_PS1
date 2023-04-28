@@ -10,7 +10,7 @@ class VCG:
     
     def calc_allocations_payments(self):
         possible_agents = list(self.agents.keys())
-        print("possible_agents:", possible_agents)
+        #print("possible_agents:", possible_agents)
         max_welfare, win_allocation = self._calc_winner(self.agents, possible_agents, self.num_agents, self.num_items)
 
         payments = {}
@@ -59,7 +59,7 @@ class VCG:
                 win_allocation = agents_items
             #print()
         #print("max_welfare:", max_welfare)
-        print("win_allocation", win_allocation)
+        #print("win_allocation", win_allocation)
         return max_welfare, win_allocation
  
     # Calculates all possible ways the items can be divided into at most num_agents/n subsets
@@ -74,7 +74,7 @@ class VCG:
             for item_combo in item_combos:
                 #all possible item combinations (not just those that have a total of num_items)
                 item_combo = list(item_combo)
-                if sum(item_combo) == num_items:
+                if sum(item_combo) <= num_items:
                     item_combo.sort()
                     item_combo_str = " ".join(str(x) for x in item_combo)
                     item_combinations[item_combo_str] = item_combo

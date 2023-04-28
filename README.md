@@ -2,11 +2,15 @@
 By Allison Gong
 
 ## To Clone
-`git clone https://github.com/AllisonArtG/CS618_PS1.git`
+```
+git clone https://github.com/AllisonArtG/CS618_PS1.git
+```
 
 ## To Run
-In the directory, the following command from the terminal/command line. <br />
-`python3 random_gen.py`
+In the directory, the following command from the terminal/command line.
+```
+python3 random_gen.py
+```
 
 ## User Guide
 1. random_gen.py functions as the main file.
